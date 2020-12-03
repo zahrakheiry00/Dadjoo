@@ -13,7 +13,7 @@ baseurl="http://127.0.0.1:5000/"
 
   }
 
-  login(inputs:any){
+  login(inputs:any): Observable<any> {
     const Url = this.baseurl+'api/login';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
