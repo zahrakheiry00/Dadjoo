@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "Dadjoo"
+  "defaultProject": "Dadjoo",
+  "cli": {
+    "analytics": false
+  }
 }
