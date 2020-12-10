@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
       "username": this.username
     }
     this.userService.login(inputs).subscribe(res => {
+      localStorage.setItem("token",res.token)
+      localStorage.getItem("token")
       if (res.status == 0) {
         this.snackBar.open(res.data, "", {
           duration: 3000,
