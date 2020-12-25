@@ -7,16 +7,24 @@
     <form class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="User name" />
+          <input matInput placeholder="User name" #Username />
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password" />
+          <input matInput placeholder="Password" #Password />
         </mat-form-field>
       </mat-card-content>
-      <button mat-stroked-button color="accent" class="btn-block">
+      <button
+        mat-stroked-button
+        color="accent"
+        class="btn-block"
+        (click)="loginClicked(Username.value, Password.value)"
+      >
         Log in
       </button>
+      <p *ngIf="invalidLogin" class="alert alert-danger" style="color: red">
+        Invalid username or password.
+      </p>
     </form>
   </mat-card>
 </div>
