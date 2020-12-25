@@ -15,8 +15,8 @@ export class RegisterComponent implements OnInit {
 
   registerClicked(username: any, email: any, phoneNumber: any, password: any) {
     var inputs = {
-      username: password,
-      email: username,
+      username: username,
+      email: email,
       phoneNumber: phoneNumber,
       password: password,
     };
