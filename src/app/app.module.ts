@@ -6,10 +6,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing';
-import { MaterialModule } from 'src/app/shared/material.module';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { MaterialModule } from './shared/material.module';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    FileUploadComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,6 +23,7 @@ import { MaterialModule } from 'src/app/shared/material.module';
     MatIconModule,
     HttpClientModule,
     MaterialModule,
+    NgxFileDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
