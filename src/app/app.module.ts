@@ -6,11 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app.routing';
+import { MaterialModule } from 'src/app/shared/material.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -18,8 +17,9 @@ import { AppRoutingModule } from './app.routing';
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
