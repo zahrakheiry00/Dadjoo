@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TestComponent } from './components/test/test.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {
@@ -23,10 +24,11 @@ const routes: Routes = [
   {
     path: 'test',
     component: TestComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path: '**',
-    redirectTo: '/test',
+    redirectTo: '/',
   },
 ];
 
