@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app.routing';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { MaterialModule } from './shared/material.module';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { AuthGuard } from './shared/auth.guard';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
     MaterialModule,
     NgxFileDropModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
