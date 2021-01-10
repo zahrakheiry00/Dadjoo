@@ -7,8 +7,12 @@ import { BehaviorSubject, Observable, observable, Subject } from 'rxjs';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
+  title = 'DadjooTest';
+
   subject = new Subject();
   bSubject = new BehaviorSubject("a");
+
+  unitTestVar="a";
 
   constructor() { }
 
@@ -31,6 +35,10 @@ export class TestComponent implements OnInit {
 
   test2(){
     this.bSubject.next("test2 click")
+  }
+
+  unitTestFun(){
+    this.unitTestVar = "b"
   }
 
 }
