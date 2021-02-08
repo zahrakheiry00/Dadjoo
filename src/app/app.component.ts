@@ -13,6 +13,7 @@ export class AppComponent {
   constructor(private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon("profile", this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svg/profile.svg"));
-    }
+    this.matIconRegistry.addSvgIcon("courthouse", this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/svg/courthouse.svg"));
+  }
 
 }

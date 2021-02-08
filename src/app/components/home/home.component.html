@@ -1,53 +1,93 @@
-<mat-toolbar color="primary" class="app-header">
-  <span class="nav-tool-items">
-    <a mat-raised-button routerLink="login" routerLinkActive="active" style="margin-right: 10px">Sign In</a>
-    <a mat-button mat-raised-button routerLink="register" routerLinkActive="active">Sign Up</a>
-  </span>
-</mat-toolbar>
+<app-menu></app-menu>
 
-<div class="search-box">
-
-  <div class="filter mat-elevation-z4">
-    <button mat-mini-fab color="primary" class="search-btn">
-      <mat-icon>search</mat-icon>
-    </button>
-    <mat-form-field appearance="outline" class="search-input">
-      <input matInput placeholder="جستجوی مشاور" class="right-text-align">
-    </mat-form-field>
-    <div class="category">
-      <div class="category-title">
-        تخصص ها
-      </div>
-      <div>
-        <div *ngFor="let category of categoryList">
-          <button class="category-btn" mat-button>{{category.name}}</button>
-        </div>
-      </div>
+<carousel>
+  <slide>
+    <img src="../../../assets/image/slider-img1.jpg" alt="first slide"
+      style="display: block; width: 100%;height: calc(100vh - 130px);">
+    <div class="carousel-caption d-none d-md-block">
+      <p style="font-size: 30px;">Welcome To</p>
+      <p style="font-size: 40px;">Law Attorney</p>
+      <p style="font-size: 17px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <p style="font-size: 17px;">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <button mat-raised-button class="slider-btn">Warn</button>
     </div>
-  </div>
-
-  <div class="result">
-    <div class="row">
-      <div *ngFor="let consultant of consultantList" class="col-sm-3">
-        <div class="consultant-box mat-elevation-z4">
-          <div class="consultant-img">
-            <img class="mat-elevation-z5" src="../../../assets/svg/profile.svg">
-          </div>
-          <div class="consultant-detail">
-            <b>
-              {{consultant.name}}
-            </b>
-            <div>
-              {{consultant.desc}}
-            </div>
-          </div>
-        </div>
-      </div>
+  </slide>
+  <slide>
+    <img src="../../../assets/image/slider-img2.jpg" alt="second slide"
+      style="display: block; width: 100%;height: calc(100vh - 130px);">
+    <div class="carousel-caption d-none d-md-block">
+      <p style="font-size: 30px;">Welcome To</p>
+      <p style="font-size: 40px;">Law Attorney</p>
+      <p style="font-size: 17px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <p style="font-size: 17px;">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <button mat-raised-button class="slider-btn">Warn</button>
     </div>
+  </slide>
+</carousel>
 
-  </div>
-
+<div class="desc">
+  <b>
+    Lorem, ipsum.
+  </b>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam rerum velit eum asperiores natus aut,
+    corporis quaerat placeat aspernatur quasi, iusto veritatis, repellat cum eos facere quam cumque quis.
+  </p>
 </div>
+
+<div class="category-box row">
+  <div *ngFor="let category of categoryList" class="col-sm-4">
+    <img class="category-img mat-elevation-z5" [src]="category.image">
+  </div>
+</div>
+
+<div class="desc">
+  <b>
+    Lorem, ipsum.
+  </b>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam rerum velit eum asperiores natus aut,
+    corporis quaerat placeat aspernatur quasi, iusto veritatis, repellat cum eos facere quam cumque quis.
+  </p>
+</div>
+
+<carousel id="topUserSlider" [itemsPerSlide]="itemsPerSlideTopUser" [singleSlideOffset]="false" [interval]="10000" [indicatorsByChunk]="true">
+  <slide *ngFor=" let consultant of topUserSlides;" class="mx-auto">
+    <div class="consultant-box">
+      <div class="mat-elevation-z4">
+      <div class="consultant-img">
+        <img class="mat-elevation-z5" src="../../../assets/svg/profile.svg">
+      </div>
+      <div class="consultant-detail">
+        <b>
+          {{consultant.name}}
+        </b>
+        <div style="color: gray;">
+          {{consultant.desc}}
+        </div>
+        <div>
+          <div class="statistics">
+            <div>
+               <mat-icon>phone</mat-icon>
+            </div>
+            <div>تعداد مشاوره</div>
+            <div>18</div>
+          </div>
+          <div class="statistics">
+            <div>
+              <mat-icon>star_rate</mat-icon>
+            </div>
+            <div>رضایت مشتریان</div>
+            <div>4.2</div>
+          </div>
+        </div>
+        <button mat-stroked-button color="primary" class="reserve">شروع گفتگو</button>
+      </div>
+    </div>
+    </div>
+  </slide>
+</carousel>
+
 
 <!-- temporary footer-->
 <div style="height: 50px;background-color: #4F4F4F;color: white;margin-top: -5px;">
