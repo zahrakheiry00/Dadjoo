@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  itemsPerSlideTopUser = 4;
+  topUserSlides = [
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
+  ];
 
   constructor() { }
 
@@ -15,29 +26,12 @@ export class HomeComponent implements OnInit {
   }
 
   categoryList = [
-    {name: "حضانت فرزند"},
-    {name: "اجرت المثل"},
-    {name: "طلاق"},
-    {name: "طلاق توافقی"},
-    {name: "جهیزیه"},
-    {name: "نفقه"},
-    {name: "مهریه"},
-    // {name: "نحله"},
-    // {name: "ملاقات فرزند"},
-    // {name: "فسخ نکاح"},
-    // {name: "سرقت"},
-    // {name: "افترا"},
-    // {name: "قتل"},
-    // {name: "مواد مخدر"},
+    {name: "ملکی",image:"../../../assets/image/estate.jpg"},
+    {name: "خانواده",image:"../../../assets/image/family.jpg"},
+    {name: "کیفری",image:"../../../assets/image/crime.jpg"},
+    {name: "مالی",image:"../../../assets/image/financial.jpg"},
+    // {name: "شرکت ها",image:"../../../assets/image/company.jpg"},
+    // {name: "جرائم اینترنتی",image:"../../../assets/image/internet-law.jpg"},
   ]
 
-  consultantList = [
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-    {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
-  ]
 }

@@ -4,15 +4,13 @@ import { CommonModule } from "@angular/common";
 import { MaterialModule } from 'src/app/shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { HomeRoutingModule } from './home.routing';
-import { MenuModule } from "../menu/menu.module";
-import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { MenuComponent } from './menu.component';
+import { MatIconModule } from "@angular/material/icon";
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    MenuComponent,
   ],
   imports: [
     CommonModule,
@@ -20,14 +18,12 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    HomeRoutingModule,
-    MenuModule,
-    CarouselModule.forRoot()
+    MatIconModule,
   ],
   entryComponents: [
 
   ],
-  exports: [HomeComponent],
+  exports: [MenuComponent],
   providers: [],
 })
-export class HomeModule {}
+export class MenuModule {}

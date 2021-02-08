@@ -54,15 +54,8 @@
   margin-top: 15px;
   margin-bottom: 15px;
   background-color: white;
-  height: 270px;
   text-align: right;
-}
-
-.result {
-  padding-left: 25px;
-  padding-right: 25px;
-  overflow-y: scroll;
-  direction: rtl;
+  padding: 10px;
 }
 
 .consultant-img {
@@ -74,6 +67,66 @@
   }
 }
 
-.consultant-detail{
+.consultant-detail {
   margin: 15px;
+  text-align: center;
+}
+
+.slider-btn {
+  color: white;
+  background-color: #900000;
+  margin-bottom: calc(100vh - 450px);
+}
+
+.desc {
+  text-align: center;
+  margin: 30px;
+  b {
+    font-size: 25px;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+
+.statistics {
+  display: inline-block;
+  padding: 10px;
+  div {
+    font-size: 12px;
+  }
+}
+
+.reserve {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#topUserSlider ::ng-deep {
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    background-image: none;
+  }
+
+  .carousel-control-next-icon:after {
+    content: ">";
+    font-size: 55px;
+    color: lightgray;
+  }
+
+  .carousel-control-prev-icon:after {
+    content: "<";
+    font-size: 55px;
+    color: lightgray;
+  }
+}
+
+.category-img {
+  margin: 20px;
+  max-width: 100%;
+  max-height: 100%;
 }

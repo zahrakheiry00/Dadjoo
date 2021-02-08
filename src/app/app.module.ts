@@ -20,8 +20,6 @@ import { AuthGuard } from './shared/auth.guard';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
     HttpClientModule,
     MaterialModule,
     NgxFileDropModule,
