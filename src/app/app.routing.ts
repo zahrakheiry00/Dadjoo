@@ -22,6 +22,16 @@ const routes: Routes = [
       import('./components/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'search',
+    loadChildren: () =>
+      import('./components/search/search.module').then((m) => m.SearchModule),
+  },
+  {
+    path: 'reserve',
+    loadChildren: () =>
+      import('./components/reserve/reserve.module').then((m) => m.ReserveModule),
+  },
+  {
     path: 'test',
     component: TestComponent,
     //canActivate: [AuthGuard]
