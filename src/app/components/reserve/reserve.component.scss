@@ -1,5 +1,71 @@
-.reserve-box{
-  margin:40px;
-  height: calc(100vh - 210px);
+.reserve-box {
+  margin: 20px;
+  height: calc(100vh - 170px);
   border-radius: 15px;
+  direction: rtl;
+}
+
+.desc-input {
+  float: right;
+  width: 100%;
+  direction: ltr;
+  text-align: right;
+  float: right;
+}
+
+.filter-btn {
+  background-color: #900000;
+  color: white;
+  float: right;
+  margin-top: 20px;
+}
+
+::ng-deep .mat-step-icon-selected {
+  background-color: #900000 !important;
+}
+
+::ng-deep .mat-step-icon-state-edit {
+  background-color: #900000 !important;
+}
+
+.reserve-stepper {
+  margin: 10px;
+  height: calc(100% - 20px);
+}
+
+.date-input {
+  direction: ltr;
+  text-align: right;
+  float: right;
+  margin: 10px;
+}
+
+table {
+  width: 100%;
+  text-align: right;
+}
+
+th {
+  text-align: right !important;
+}
+
+.next-btn {
+  background-color: #900000;
+  color: white;
+  bottom: 35px;
+  left: 40px;
+  position: absolute;
+}
+
+.back-btn{
+  background-color: #900000;
+  color: white;
+  bottom: 35px;
+  right: 40px;
+  position: absolute;
+}
+
+.file-upload{
+  display: inline-block;
+  width: 100%;
 }

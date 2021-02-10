@@ -4,16 +4,14 @@ import { CommonModule } from "@angular/common";
 import { MaterialModule } from 'src/app/shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { ReserveComponent } from './reserve.component';
-import { ReserveRoutingModule } from './reserve.routing';
-import { MenuModule } from "../menu/menu.module";
-import { CarouselModule } from 'ngx-bootstrap/carousel';
-import { FileUploadModule } from "../file-upload/file-upload.module";
+import { FileUploadComponent } from './file-upload.component';
+import { MatIconModule } from "@angular/material/icon";
+import { NgxFileDropModule } from "ngx-file-drop";
 
 
 @NgModule({
   declarations: [
-    ReserveComponent,
+    FileUploadComponent,
   ],
   imports: [
     CommonModule,
@@ -21,15 +19,13 @@ import { FileUploadModule } from "../file-upload/file-upload.module";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    ReserveRoutingModule,
-    MenuModule,
-    CarouselModule.forRoot(),
-    FileUploadModule,
+    MatIconModule,
+    NgxFileDropModule,
   ],
   entryComponents: [
 
   ],
-  exports: [ReserveComponent],
+  exports: [FileUploadComponent],
   providers: [],
 })
-export class ReserveModule {}
+export class FileUploadModule {}

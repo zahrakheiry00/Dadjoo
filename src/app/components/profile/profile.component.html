@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+
+<div class="profile-page">
+  <div class="right-panel mat-elevation-z4">
+    <div>
+      <div class="user-img">
+        <img class="mat-elevation-z5" src="../../../assets/svg/profile.svg">
+      </div>
+      <div class="user-name">Lorem, ipsum.</div>
+    </div>
+    <div *ngFor="let link of links">
+      <button class="links" (click)="menuOnSelect(link.name)" mat-button>{{link.name}}</button>
+    </div>
+  </div>
+  <div class="main mat-elevation-z4">
+    <app-user-info *ngIf="(selectedLink == 'اطلاعات کاربر')&&pageMode=='user'"></app-user-info>
+    <app-ticket *ngIf="(selectedLink == 'لیست رزرو')&&pageMode=='user'"></app-ticket>
+    <app-history *ngIf="(selectedLink == 'تاریخچه')&&pageMode=='user'"></app-history>
+    <app-user-info *ngIf="(selectedLink == 'اطلاعات کاربر')&&pageMode=='expert'"></app-user-info>
+    <app-free-time *ngIf="(selectedLink == 'وقت آزاد')&&pageMode=='expert'"></app-free-time>
+    <app-ticket *ngIf="(selectedLink == 'لیست رزرو')&&pageMode=='expert'"></app-ticket>
+    <app-history *ngIf="(selectedLink == 'تاریخچه')&&pageMode=='expert'"></app-history>
+  </div>
+</div>

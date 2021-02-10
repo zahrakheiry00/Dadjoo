@@ -32,6 +32,16 @@ const routes: Routes = [
       import('./components/reserve/reserve.module').then((m) => m.ReserveModule),
   },
   {
+    path: 'users-profile',
+    loadChildren: () =>
+      import('./components/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
+    path: 'experts-profile',
+    loadChildren: () =>
+      import('./components/profile/profile.module').then((m) => m.ProfileModule),
+  },
+  {
     path: 'test',
     component: TestComponent,
     //canActivate: [AuthGuard]

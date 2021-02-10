@@ -37,7 +37,7 @@
 
 <div class="category-box row">
   <div *ngFor="let category of categoryList" class="col-sm-4">
-    <img (click)="startReserve(category.name)" class="category-img mat-elevation-z5" [src]="category.image">
+    <img (click)="startReserve(category.name)" class="category-img" [src]="category.image">
   </div>
 </div>
 
@@ -51,7 +51,8 @@
   </p>
 </div>
 
-<carousel id="topUserSlider" [itemsPerSlide]="itemsPerSlideTopUser" [singleSlideOffset]="false" [interval]="10000"
+<div class="topUserSlider">
+  <carousel id="topUserSlider" [itemsPerSlide]="itemsPerSlideTopUser" [singleSlideOffset]="false" [interval]="10000"
   [indicatorsByChunk]="true">
   <slide *ngFor=" let consultant of topUserSlides;" class="mx-auto">
     <div class="consultant-box">
@@ -88,6 +89,7 @@
     </div>
   </slide>
 </carousel>
+</div>
 
 
 <!-- temporary footer-->

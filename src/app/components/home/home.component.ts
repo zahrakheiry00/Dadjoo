@@ -40,8 +40,8 @@ export class HomeComponent implements OnInit {
     {name: "خانواده",image:"../../../assets/image/family.jpg"},
     {name: "کیفری",image:"../../../assets/image/crime.jpg"},
     {name: "مالی",image:"../../../assets/image/financial.jpg"},
-    // {name: "شرکت ها",image:"../../../assets/image/company.jpg"},
-    // {name: "جرائم اینترنتی",image:"../../../assets/image/internet-law.jpg"},
+    {name: "بیمه",image:"../../../assets/image/insurance.jpg"},
+    {name: "جرائم اینترنتی",image:"../../../assets/image/internet-law.jpg"},
   ]
 
 }

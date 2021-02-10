@@ -49,7 +49,6 @@ export class FileUploadComponent implements OnInit {
         });
       } else {
         const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-        //console.log(droppedFile.relativePath, fileEntry);
       }
     }
   }
@@ -64,7 +63,7 @@ export class FileUploadComponent implements OnInit {
   }
 
   addFile(file: any) {
-    const Url = 'http://127.0.0.1:5000/api/addFormFile';
+    const Url = 'http://127.0.0.1:5000/api/';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     var inputJson = {
       desc: 'test',

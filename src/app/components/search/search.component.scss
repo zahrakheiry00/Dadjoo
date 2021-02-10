@@ -32,24 +32,6 @@
   text-align: right;
 }
 
-.category {
-  border-top: 1px solid lightgrey;
-  margin-right: 5px;
-  margin-left: 5px;
-  text-align: right;
-}
-
-.category-title {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.category-btn {
-  width: 100%;
-  text-align: right;
-  height: 50px;
-}
-
 .consultant-box {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -97,49 +79,25 @@
   }
 }
 
-.reserve {
-  margin-top: 10px;
-  margin-bottom: 20px;
+.search-input {
+  direction: ltr;
+  text-align: right;
+  float: right;
+  margin: 10px;
 }
 
-#topUserSlider ::ng-deep {
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    height: 100px;
-    width: 100px;
-    outline: black;
-    background-size: 100%, 100%;
-    background-image: none;
-  }
-
-  .carousel-control-next {
-    margin-right: -100px;
-  }
-
-  .carousel-control-prev {
-    margin-left: -100px;
-  }
-
-  .carousel-control-next-icon:after {
-    content: ">";
-    font-size: 55px;
-    color: lightgray;
-  }
-
-  .carousel-control-prev-icon:after {
-    content: "<";
-    font-size: 55px;
-    color: lightgray;
-  }
-
-  .carousel {
-    margin-right: 50px;
-    margin-left: 50px;
-  }
+.search-btn {
+  background-color: #900000;
+  color: white;
+  float: right;
+  margin-top: 20px;
 }
 
-.category-img {
-  margin: 20px;
-  max-width: 100%;
-  max-height: 100%;
+.search-box {
+  width: 100%;
+  display: inline-block;
+}
+
+.reserve{
+  margin-bottom: 15px;
 }

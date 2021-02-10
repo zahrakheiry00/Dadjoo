@@ -1,34 +1,45 @@
 <app-menu></app-menu>
 
-<div *ngFor="let consultant of users" class="consultant-box">
-  <div class="mat-elevation-z4">
-    <div class="consultant-img">
-      <img class="mat-elevation-z5" src="../../../assets/svg/profile.svg">
-    </div>
-    <div class="consultant-detail">
-      <b>
-        {{consultant.name}}
-      </b>
-      <div style="color: gray;">
-        {{consultant.desc}}
+
+<div class="search-box">
+  <mat-form-field class="search-input" appearance="outline">
+    <input matInput placeholder="جستجوی با نام مشاور">
+  </mat-form-field>
+  <button mat-raised-button class="search-btn">جستجو</button>
+</div>
+
+<div class="row">
+  <div *ngFor="let consultant of users" class="consultant-box col-sm-3">
+    <div class="mat-elevation-z4">
+      <div class="consultant-img">
+        <img class="mat-elevation-z5" src="../../../assets/svg/profile.svg">
       </div>
-      <div>
-        <div class="statistics">
-          <div>
-            <mat-icon>phone</mat-icon>
-          </div>
-          <div>تعداد مشاوره</div>
-          <div>18</div>
+      <div class="consultant-detail">
+        <b>
+          {{consultant.name}}
+        </b>
+        <div style="color: gray;">
+          {{consultant.desc}}
         </div>
-        <div class="statistics">
-          <div>
-            <mat-icon>star_rate</mat-icon>
+        <div>
+          <div class="statistics">
+            <div>
+              <mat-icon>phone</mat-icon>
+            </div>
+            <div>تعداد مشاوره</div>
+            <div>18</div>
           </div>
-          <div>رضایت مشتریان</div>
-          <div>4.2</div>
+          <div class="statistics">
+            <div>
+              <mat-icon>star_rate</mat-icon>
+            </div>
+            <div>رضایت مشتریان</div>
+            <div>4.2</div>
+          </div>
         </div>
+        <button mat-stroked-button color="primary" class="reserve">شروع گفتگو</button>
       </div>
-      <button mat-stroked-button color="primary" class="reserve">شروع گفتگو</button>
     </div>
   </div>
+
 </div>
