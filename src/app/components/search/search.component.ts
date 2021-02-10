@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class HomeComponent implements OnInit {
-  itemsPerSlideTopUser = 4;
-  topUserSlides = [
+export class SearchComponent implements OnInit {
+
+  users = [
     {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
     {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
     {name:"محمد مهدی رضاییان",desc:"وکیل پایه یک دادگستری",score:4},
@@ -25,23 +25,5 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  startReserve(category:any){
-    if(localStorage.getItem('token')){
-
-    }
-    else{
-      this.router.navigate(['../login']);
-    }
-  }
-
-  categoryList = [
-    {name: "ملکی",image:"../../../assets/image/estate.jpg"},
-    {name: "خانواده",image:"../../../assets/image/family.jpg"},
-    {name: "کیفری",image:"../../../assets/image/crime.jpg"},
-    {name: "مالی",image:"../../../assets/image/financial.jpg"},
-    {name: "بیمه",image:"../../../assets/image/insurance.jpg"},
-    {name: "جرائم اینترنتی",image:"../../../assets/image/internet-law.jpg"},
-  ]
 
 }
