@@ -1,0 +1,59 @@
+.chat-page {
+  background-color: #f5f5f5;
+}
+
+.chat-menu {
+  height: 100px;
+  background-color: white;
+}
+
+.chat-right {
+  background-color: white;
+  width: 250px;
+  display: inline-block;
+  height: calc(100vh - 100px);
+  float: right;
+}
+
+.chat-left {
+  width: calc(100% - 250px);
+  display: inline-block;
+  height: calc(100vh - 150px);
+}
+
+.sender {
+  float: right;
+  margin: 20px;
+  background-color: white;
+  max-width: 200px;
+}
+
+.receiver {
+  float: left;
+  margin: 20px;
+  background-color: black;
+  color: white;
+  max-width: 200px;
+}
+
+.chat-box {
+  width: 100%;
+  display: inline-block;
+}
+
+.chat-footer {
+  bottom: 0px;
+  position: absolute;
+  width: calc(100% - 250px);
+  mat-form-field {
+    direction: ltr;
+    text-align: right;
+    float: right;
+    margin-right: 10px;
+    float: right;
+    width: calc(100% - 100px);
+  }
+  button{
+    margin-top: 10px;
+  }
+}
