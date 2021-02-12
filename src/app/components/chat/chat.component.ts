@@ -47,7 +47,8 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(){
     //this.socket = io(this.SIGNALING_SERVER_URL, { autoConnect: false });
-    this.getLocalStream();
+    //this.getLocalStream();
+    this.socket.connect();
 
     this.socket.on('data', (data: any) => {
       console.log('Data received: ', data);
@@ -59,6 +60,10 @@ export class ChatComponent implements OnInit {
       // Connection with signaling server is ready, and so is local stream
       this.createPeerConnection();
       this.sendOffer();
+    });
+
+    this.socket.on('textData', (data: any) => {
+      console.log('textData: ', data);
     });
 
   }
