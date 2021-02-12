@@ -8,6 +8,8 @@ import { ChatComponent } from './chat.component';
 import { ChatRoutingModule } from './chat.routing';
 import { MenuModule } from "../menu/menu.module";
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { SocketIoModule } from 'ngx-socket-io';
+import { FileUploadModule } from "../file-upload/file-upload.module";
 
 
 @NgModule({
@@ -22,7 +24,10 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     RouterModule,
     ChatRoutingModule,
     MenuModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    FileUploadModule,
+    SocketIoModule.forRoot({ url: 'http://localhost:9999', options: {} })
+    // SocketIoModule.forRoot({ url: 'http://192.168.43.44:9999', options: {} }) temporary
   ],
   entryComponents: [
 

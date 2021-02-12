@@ -9,9 +9,19 @@ import { Socket } from 'ngx-socket-io';
 })
 export class ChatComponent implements OnInit {
   texts = [
-    {sender:true,text:'تست1'},
-    {sender:false,text:'تست2'},
-    {sender:true,text:' تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی'},
+    { sender: true, text: 'تست1' },
+    { sender: false, text: 'تست2' },
+    { sender: true, text: ' تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی' },
+  ];
+  counterLabel = "30:00";
+  counterTime = 1800;
+  files = [
+    {name:'Lorem1'},
+    {name:'Lorem1'},
+    {name:'Lorem1'},
+    {name:'Lorem1'},
+    {name:'Lorem1'},
+    {name:'Lorem1'},
   ]
 
   SIGNALING_SERVER_URL = 'http://0.0.0.0:9999';
@@ -35,20 +45,27 @@ export class ChatComponent implements OnInit {
     // ]
   };
 
-  pc:any;
-  localStream:any;
-  remoteStreamElement:any = document.querySelector('#remoteStream');
- // socket:any;
- @ViewChild('remoteStream') remoteStream:any;
+  pc: any;
+  localStream: any;
+  remoteStreamElement: any = document.querySelector('#remoteStream');
+  // socket:any;
+  @ViewChild('remoteStream') remoteStream: any;
 
   constructor(private socket: Socket) {
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
+
+    this.startCounter();
+
     //this.socket = io(this.SIGNALING_SERVER_URL, { autoConnect: false });
     //this.getLocalStream();
     this.socket.connect();
+    setTimeout(() => {
+      this.socket.emit('textData', 'salam');
+
+    }, 3000);
 
     this.socket.on('data', (data: any) => {
       console.log('Data received: ', data);
@@ -68,7 +85,7 @@ export class ChatComponent implements OnInit {
 
   }
 
-  sendData(data:any)  {
+  sendData(data: any) {
     this.socket.emit('data', data);
   };
 
@@ -101,7 +118,7 @@ export class ChatComponent implements OnInit {
     console.log('Send offer');
     this.pc.createOffer().then(
       this.setAndSendLocalDescription.bind(this),
-      (error:any) => { console.error('Send offer failed: ', error); }
+      (error: any) => { console.error('Send offer failed: ', error); }
     );
   };
 
@@ -109,17 +126,17 @@ export class ChatComponent implements OnInit {
     console.log('Send answer');
     this.pc.createAnswer().then(
       this.setAndSendLocalDescription.bind(this),
-      (error:any) => { console.error('Send answer failed: ', error); }
+      (error: any) => { console.error('Send answer failed: ', error); }
     );
   };
 
-  setAndSendLocalDescription(sessionDescription:any){
+  setAndSendLocalDescription(sessionDescription: any) {
     this.pc.setLocalDescription(sessionDescription);
     console.log('Local description set');
     this.sendData(sessionDescription);
   };
 
-  onIceCandidate(event:any){
+  onIceCandidate(event: any) {
     if (event.candidate) {
       console.log('ICE candidate');
       this.sendData({
@@ -129,27 +146,27 @@ export class ChatComponent implements OnInit {
     }
   };
 
-  onAddStream(event:any){
+  onAddStream(event: any) {
     console.log('Add stream');
     console.log(event);
     this.remoteStreamElement = document.querySelector('#remoteStream');
     this.remoteStreamElement.srcObject = event.stream;
   };
 
-  handleSignalingData(data:any){
+  handleSignalingData(data: any) {
     switch (data.type) {
       case 'offer':
         setTimeout(() => {
-         this.createPeerConnection();
-        this.pc.setRemoteDescription(new RTCSessionDescription(data));
-        this.sendAnswer();
+          this.createPeerConnection();
+          this.pc.setRemoteDescription(new RTCSessionDescription(data));
+          this.sendAnswer();
 
-      }, 5000);
+        }, 5000);
         break;
       case 'answer':
         setTimeout(() => {
-        this.pc.setRemoteDescription(new RTCSessionDescription(data));
-      }, 5000);
+          this.pc.setRemoteDescription(new RTCSessionDescription(data));
+        }, 5000);
         break;
       case 'candidate': setTimeout(() => {
         this.pc.addIceCandidate(new RTCIceCandidate(data.candidate));
@@ -157,5 +174,14 @@ export class ChatComponent implements OnInit {
         break;
     }
   };
+
+  startCounter() {
+    setInterval(() => {
+      this.counterTime--;
+      var min = Math.floor(this.counterTime / 60);
+      var sec = (this.counterTime % 60);
+      this.counterLabel = min + ':' + sec;
+    }, 1000);
+  }
 
 }

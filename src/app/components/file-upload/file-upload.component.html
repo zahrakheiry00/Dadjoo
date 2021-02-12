@@ -2,8 +2,8 @@
   <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
   (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
       <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-        Optional custom content that replaces the the entire default content.
-        <button mat-button  (click)="openFileSelector()">Browse Files</button>
+        محل قرار دادن فایل
+        <button mat-button  (click)="openFileSelector()">انتخاب فایل</button>
       </ng-template>
   </ngx-file-drop>
   <!-- <div class="upload-table">
@@ -22,9 +22,9 @@
   </div> -->
 </div>
 
-<a *ngIf="file" [href]="file" download="file">
+<!-- <a *ngIf="file" [href]="file" download="file">
   دانلود
-</a>
+</a> -->
 
 
 
