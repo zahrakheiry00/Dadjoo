@@ -57,8 +57,8 @@ export class ChatComponent implements OnInit {
     this.startCounter();
 
     //this.socket = io(this.SIGNALING_SERVER_URL, { autoConnect: false });
-    //this.getLocalStream();
-    this.socket.connect();
+    this.getLocalStream();
+    //this.socket.connect();
 
     this.socket.on('data', (data: any) => {
       if(data.video){
@@ -184,12 +184,6 @@ export class ChatComponent implements OnInit {
     this.texts.push({ sender: true, text: this.message });
     this.socket.emit('data', {video:true,text:this.message});
     this.message = "";
-  }
-
-
-  startVideoChat(){
-
-    this.getLocalStream();
   }
 
 }
