@@ -8,11 +8,7 @@ import { Socket } from 'ngx-socket-io';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
-  texts = [
-    { sender: true, text: 'تست1' },
-    { sender: false, text: 'تست2' },
-    { sender: true, text: ' تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی تست متن طولانی' },
-  ];
+  texts:any = [];
   counterLabel = "30:00";
   counterTime = 1800;
   files = [
@@ -23,6 +19,7 @@ export class ChatComponent implements OnInit {
     {name:'Lorem1'},
     {name:'Lorem1'},
   ]
+  message:any;
 
   SIGNALING_SERVER_URL = 'http://0.0.0.0:9999';
   TURN_SERVER_URL = 'localhost:3478';
@@ -62,14 +59,14 @@ export class ChatComponent implements OnInit {
     //this.socket = io(this.SIGNALING_SERVER_URL, { autoConnect: false });
     //this.getLocalStream();
     this.socket.connect();
-    setTimeout(() => {
-      this.socket.emit('textData', 'salam');
-
-    }, 3000);
 
     this.socket.on('data', (data: any) => {
-      console.log('Data received: ', data);
-      this.handleSignalingData(data);
+      if(data.video){
+        this.texts.push({sender:false,text:data.text});
+      }
+      else{
+        this.handleSignalingData(data);
+      }
     });
 
     this.socket.on('ready', () => {
@@ -77,16 +74,14 @@ export class ChatComponent implements OnInit {
       // Connection with signaling server is ready, and so is local stream
       this.createPeerConnection();
       this.sendOffer();
+
     });
 
-    this.socket.on('textData', (data: any) => {
-      console.log('textData: ', data);
-    });
 
   }
 
   sendData(data: any) {
-    this.socket.emit('data', data);
+    this.socket.emit('data', data );
   };
 
   getLocalStream() {
@@ -94,6 +89,7 @@ export class ChatComponent implements OnInit {
       .then((stream) => {
         console.log('Stream found');
         this.localStream = stream;
+
         // Connect after making sure that local stream is availble
         this.socket.connect();
       })
@@ -110,7 +106,7 @@ export class ChatComponent implements OnInit {
       this.pc.addStream(this.localStream);
       console.log('PeerConnection created');
     } catch (error) {
-      console.error('PeerConnection failed: ', error);
+      //console.error('PeerConnection failed: ', error);
     }
   };
 
@@ -182,6 +178,18 @@ export class ChatComponent implements OnInit {
       var sec = (this.counterTime % 60);
       this.counterLabel = min + ':' + sec;
     }, 1000);
+  }
+
+  sendMessage(){
+    this.texts.push({ sender: true, text: this.message });
+    this.socket.emit('data', {video:true,text:this.message});
+    this.message = "";
+  }
+
+
+  startVideoChat(){
+
+    this.getLocalStream();
   }
 
 }

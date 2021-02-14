@@ -93,26 +93,32 @@
   position: absolute;
 }
 
-.counter{
+.counter {
   display: inline-block;
   float: right;
-  margin-top: -44px;
+  margin-top: 30px;
   text-align: center;
 }
 
-.start-chat-btn{
+.start-chat-btn {
   width: 100%;
 }
 
-.file-list{
+.file-list {
   text-align: right;
   border-top: 1px solid lightgrey;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.user-info{
+.file-item {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.user-info {
   display: inline-block;
   position: absolute;
   margin-top: 31px;
   margin-left: 11px;
 }
-
