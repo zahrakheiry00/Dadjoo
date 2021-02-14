@@ -42,6 +42,11 @@ const routes: Routes = [
       import('./components/profile/profile.module').then((m) => m.ProfileModule),
   },
   {
+    path: 'chat',
+    loadChildren: () =>
+      import('./components/chat/chat.module').then((m) => m.ChatModule),
+  },
+  {
     path: 'test',
     component: TestComponent,
     //canActivate: [AuthGuard]
