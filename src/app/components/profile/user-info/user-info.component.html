@@ -1,1 +1,28 @@
-user-info!
+<div>
+  <div class="info-cal">
+    <div>
+      نام : مهدی
+    </div>
+    <div>
+      نام : رضاییان
+    </div>
+    <div>
+      آدرس
+    </div>
+  </div>
+  <div class="info-cal">
+    <div> ایمیل </div>
+    <div>شماره</div>
+    <div>توضیحات</div>
+  </div>
+
+  <div *ngIf="pageMode!='user'">
+    <div class="user-file">
+      فایل مدارک
+    </div>
+    <div style="padding:20px">
+      <app-file-upload></app-file-upload>
+    </div>
+  </div>
+
+</div>

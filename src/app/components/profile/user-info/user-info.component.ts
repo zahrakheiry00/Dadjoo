@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
+  @Input() pageMode:any;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
 
   }
+
 
 }

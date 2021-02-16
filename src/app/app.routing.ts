@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { TestComponent } from './components/test/test.component';
 import { AuthGuard } from './shared/auth.guard';
 
@@ -45,6 +47,19 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () =>
       import('./components/chat/chat.module').then((m) => m.ChatModule),
+  },
+  {
+    path: 'register-user',
+    loadChildren: () =>
+      import('./components/register-user/register-user.module').then((m) => m.RegisterUserModule),
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent,
   },
   {
     path: 'test',
