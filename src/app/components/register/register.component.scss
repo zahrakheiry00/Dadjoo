@@ -6,3 +6,43 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+
+
+.login-background {
+  width: 100%;
+  height: 100vh;
+}
+
+.login-box {
+  position: absolute;
+  background-color: white;
+  margin-top: -50%;
+  margin-left: 100px;
+  height: 70%;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.login-btn{
+  background-color: #900000;
+}
+
+.input-rtl{
+
+}
+
+mat-form-field {
+  direction: ltr;
+  text-align: right;
+  float: right;
+
+}
+
+::ng-deep .mat-step-icon-selected {
+  background-color: #900000 !important;
+}
+
+::ng-deep .mat-step-icon-state-edit {
+  background-color: #900000 !important;
+}

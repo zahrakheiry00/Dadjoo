@@ -12,6 +12,7 @@ import { UserInfoComponent } from "./user-info/user-info.component";
 import { FreeTimeComponent } from "./free-time/free-time.component";
 import { TicketComponent } from "./ticket/ticket.component";
 import { HistoryComponent } from "./history/history.component";
+import { FileUploadModule } from "../file-upload/file-upload.module";
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { HistoryComponent } from "./history/history.component";
     RouterModule,
     ProfileRoutingModule,
     MenuModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    FileUploadModule,
   ],
   entryComponents: [
 

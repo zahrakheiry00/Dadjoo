@@ -163,3 +163,23 @@
   padding-left: 50px;
   margin-bottom: 30px;
 }
+
+.logo {
+  display: inline-block;
+  mat-icon {
+    margin-top: 15px;
+    margin-left: 23px;
+    color: #900000;
+    margin-right: 10px;
+    width: 43px;
+    height: 43px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+.center {
+  text-align: center;
+  vertical-align: middle;
+}
