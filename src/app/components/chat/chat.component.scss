@@ -109,6 +109,8 @@
   border-top: 1px solid lightgrey;
   margin-left: 10px;
   margin-right: 10px;
+  height: calc(100vh - 400px);
+  overflow: auto;
 }
 
 .file-item {
@@ -121,4 +123,9 @@
   position: absolute;
   margin-top: 31px;
   margin-left: 11px;
+}
+
+.chat-texts{
+  overflow: auto;
+  height: calc(100vh - 150px);
 }
