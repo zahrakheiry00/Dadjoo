@@ -26,7 +26,7 @@ import { FileUploadModule } from "../file-upload/file-upload.module";
     MenuModule,
     CarouselModule.forRoot(),
     FileUploadModule,
-    SocketIoModule.forRoot({ url: 'http://localhost:9999', options: {} })
+    SocketIoModule.forRoot({ url: 'http://127.0.0.1:5000/', options: {} })
     //SocketIoModule.forRoot({ url: 'http://192.168.43.44:9999', options: {} })
   ],
   entryComponents: [

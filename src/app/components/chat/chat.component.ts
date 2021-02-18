@@ -156,17 +156,16 @@ export class ChatComponent implements OnInit {
           this.createPeerConnection();
           this.pc.setRemoteDescription(new RTCSessionDescription(data));
           this.sendAnswer();
-
-        }, 5000);
+        }, 1000);
         break;
       case 'answer':
         setTimeout(() => {
           this.pc.setRemoteDescription(new RTCSessionDescription(data));
-        }, 5000);
+        }, 1000);
         break;
       case 'candidate': setTimeout(() => {
         this.pc.addIceCandidate(new RTCIceCandidate(data.candidate));
-      }, 5000);
+      }, 1000);
         break;
     }
   };
