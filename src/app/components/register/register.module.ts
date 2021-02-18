@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterRoutingModule } from './register-routing.module';
 import { RegisterComponent } from './register.component';
 import { UserService } from 'src/app/services/user.service';
+import { FileUploadModule } from '../file-upload/file-upload.module';
+
 @NgModule({
   declarations: [RegisterComponent],
   imports: [
@@ -13,6 +15,7 @@ import { UserService } from 'src/app/services/user.service';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    FileUploadModule,
   ],
   providers: [UserService],
 })

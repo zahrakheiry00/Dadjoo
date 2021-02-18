@@ -1,1 +1,51 @@
-<p>register-user works!</p>
+<img
+  class="login-background"
+  src="../../../assets/image/login-background.jpg"
+/>
+
+<mat-card class="login-box mat-elevation-z5">
+  <!-- <mat-card-header>
+    <mat-card-title style="font-family: IRANSans1">ثبت نام</mat-card-title>
+  </mat-card-header> -->
+  <div>
+    <mat-card-content style="margin-top: 18px; height: 300px">
+      <div style="width: 100%; display: inline-block">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="نام کاربری" #username />
+        </mat-form-field>
+      </div>
+      <div style="width: 100%; display: inline-block">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="ایمیل" #email />
+        </mat-form-field>
+      </div>
+
+      <div style="width: 100%; display: inline-block">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="شماره تماس" #phoneNumber />
+        </mat-form-field>
+      </div>
+
+      <div style="width: 100%; display: inline-block">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="رمز عبور" #password />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="
+        registerClicked(
+          username.value,
+          email.value,
+          phoneNumber.value,
+          password.value
+        )
+      "
+      class="login-btn"
+    >
+      تایید
+    </button>
+  </div>
+</mat-card>

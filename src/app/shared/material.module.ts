@@ -36,7 +36,6 @@ import { MatToolbar, MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MaterialPersianDateAdapter, PERSIAN_DATE_FORMATS } from "./material.persian-date.adapter";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     imports: [
@@ -75,7 +74,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         MatTreeModule,
         MatNativeDateModule,
         MatToolbarModule,
-        FontAwesomeModule,
     ],
     exports: [
         MatAutocompleteModule,

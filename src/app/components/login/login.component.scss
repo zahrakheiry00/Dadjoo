@@ -9,9 +9,19 @@
   margin-top: calc(-50vh - 145px);
   margin-left: 100px;
   height: 320px;
-  width: 21%
+  width: 21%;
+  text-align: center;
+  padding: 4%;
+  font-family: IRANSans1 !important;
 }
 
-.login-btn{
+.login-btn {
   background-color: #900000;
+  margin-top: 12px;
+  width: 100%;
+  font-family: IRANSans2 !important;
+}
+mat-form-field {
+  font-family: IRANSans3 !important;
+  text-align: right;
 }
