@@ -1,10 +1,17 @@
 <div class="center">
-  <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
-  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-        محل قرار دادن فایل
-        <button mat-button  (click)="openFileSelector()">انتخاب فایل</button>
-      </ng-template>
+  <ngx-file-drop
+    dropZoneLabel="Drop files here"
+    (onFileDrop)="dropped($event)"
+    (onFileOver)="fileOver($event)"
+    (onFileLeave)="fileLeave($event)"
+  >
+    <ng-template
+      ngx-file-drop-content-tmp
+      let-openFileSelector="openFileSelector"
+    >
+      محل قرار دادن فایل
+      <button mat-button (click)="openFileSelector()">انتخاب فایل</button>
+    </ng-template>
   </ngx-file-drop>
   <!-- <div class="upload-table">
       <table class="table">
@@ -25,6 +32,3 @@
 <!-- <a *ngIf="file" [href]="file" download="file">
   دانلود
 </a> -->
-
-
-

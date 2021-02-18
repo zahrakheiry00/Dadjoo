@@ -7,8 +7,6 @@
   transform: translate(-50%, -50%);
 }
 
-
-
 .login-background {
   width: 100%;
   height: 100vh;
@@ -17,26 +15,26 @@
 .login-box {
   position: absolute;
   background-color: white;
-  margin-top: -50%;
+  margin-top: -40%;
   margin-left: 100px;
-  height: 70%;
+  height: 80%;
   width: 80%;
   margin-left: 10%;
 }
 
-.login-btn{
+.login-btn {
   background-color: #900000;
+  font-family: IRANSans3 !important;
+  margin-top: 10px !important;
 }
 
-.input-rtl{
-
+.input-rtl {
 }
 
 mat-form-field {
   direction: ltr;
   text-align: right;
   float: right;
-
 }
 
 ::ng-deep .mat-step-icon-selected {
@@ -45,4 +43,63 @@ mat-form-field {
 
 ::ng-deep .mat-step-icon-state-edit {
   background-color: #900000 !important;
+}
+
+::ng-deep .mat-step-text-label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "IRANSans2";
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+  width: 500px;
+}
+
+::ng-deep .mat-card-content {
+  display: block;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+::ng-deep .mat-card > :last-child:not(.mat-card-footer),
+.mat-card-content > :last-child:not(.mat-card-footer) {
+  margin-bottom: 0;
+  display: inline-grid;
+}
+
+::ng-deep .mat-radio-label {
+  direction: rtl;
+}
+
+::ng-deep .mat-radio-label-content {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  display: inline-block;
+  order: 0;
+  line-height: 28px !important;
+  padding-left: 8px;
+  padding-right: 20px !important;
+}
+
+radio-button {
+  font-family: IRANSans1 !important;
+}
+
+::ng-deep .mat-body,
+.mat-body-1,
+.mat-typography {
+  font-family: IRANSans1;
+}
+::ng-deep .mat-radio-button {
+  font-family: IRANSans1;
+}
+
+::ng-deep .ngx-file-drop__content[_ngcontent-obl-c286] {
+  align-items: center;
+  color: #0782d0;
+  display: flex;
+  height: 100px;
+  justify-content: center;
 }

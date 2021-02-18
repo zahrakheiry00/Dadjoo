@@ -1,15 +1,17 @@
-.info-cal{
+.info-cal {
+  font-family: IRANSans2;
   display: inline-block;
   width: 50%;
   text-align: right;
   margin-top: 25px;
-  div{
+
+  div {
     line-height: 50px;
-    padding-right: 20px;
+    padding-right: 8px;
   }
 }
 
-.user-file{
+.user-file {
   text-align: right;
   padding: 20px;
 }

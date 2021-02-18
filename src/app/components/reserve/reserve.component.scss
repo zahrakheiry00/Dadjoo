@@ -3,6 +3,7 @@
   height: calc(100vh - 170px);
   border-radius: 15px;
   direction: rtl;
+  font-family: IRANSans2 !important;
 }
 
 .desc-input {
@@ -11,6 +12,7 @@
   direction: ltr;
   text-align: right;
   float: right;
+  font-family: IRANSans2 !important;
 }
 
 .filter-btn {
@@ -18,19 +20,23 @@
   color: white;
   float: right;
   margin-top: 20px;
+  font-family: IRANSans2 !important;
 }
 
 ::ng-deep .mat-step-icon-selected {
   background-color: #900000 !important;
+  font-family: IRANSans2 !important;
 }
 
 ::ng-deep .mat-step-icon-state-edit {
   background-color: #900000 !important;
+  font-family: IRANSans2 !important;
 }
 
 .reserve-stepper {
   margin: 10px;
   height: calc(100% - 20px);
+  font-family: IRANSans2 !important;
 }
 
 .date-input {
@@ -38,15 +44,18 @@
   text-align: right;
   float: right;
   margin: 10px;
+  font-family: IRANSans2 !important;
 }
 
 table {
-  width: 100%;
+  width: 90%;
   text-align: right;
+  font-family: IRANSans2 !important;
 }
 
 th {
   text-align: right !important;
+  font-family: IRANSans2 !important;
 }
 
 .next-btn {
@@ -55,18 +64,21 @@ th {
   bottom: 35px;
   left: 40px;
   position: absolute;
+  font-family: IRANSans2 !important;
 }
 
-.back-btn{
+.back-btn {
   background-color: #900000;
   color: white;
   bottom: 35px;
   right: 40px;
   position: absolute;
+  font-family: IRANSans2 !important;
 }
 
-.file-upload{
+.file-upload {
   display: inline-block;
   width: 100%;
   padding: 10px;
+  font-family: IRANSans2 !important;
 }

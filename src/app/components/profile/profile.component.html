@@ -5,16 +5,19 @@
     <div>
       <div class="user-img">
         <img class="mat-elevation-z5" src="../../../assets/image/lawer3.jpg" />
-        <div class="user-name" >مهدی رضاییان</div>
+        <div class="user-name">مهدی رضاییان</div>
+      </div>
+      <div *ngIf="pageMode != 'user'" style="text-align: center">
+        <div class="user-name" style="display: inline-block">4.4</div>
+        <div style="display: inline-block">
+          <mat-icon class="mat-icon-star">star_rate</mat-icon>
+        </div>
       </div>
     </div>
     <div *ngFor="let link of links">
       <button class="links" (click)="menuOnSelect(link.name)" mat-button>
-        <span class="material-icons" >
-          keyboard_arrow_left
-          </span>
+        <span class="material-icons"> keyboard_arrow_left </span>
         {{ link.name }}
-
       </button>
     </div>
   </div>

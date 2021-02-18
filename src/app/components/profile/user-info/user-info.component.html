@@ -1,28 +1,38 @@
-<div>
+<div style="padding: 14px">
   <div class="info-cal">
-    <div>
-      نام : مهدی
-    </div>
-    <div>
-      نام : رضاییان
-    </div>
-    <div>
-      آدرس
-    </div>
-  </div>
-  <div class="info-cal">
-    <div> ایمیل </div>
+    <div>ایمیل</div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput placeholder="" #username />
+    </mat-form-field>
     <div>شماره</div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput placeholder="" #username />
+    </mat-form-field>
     <div>توضیحات</div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput placeholder="" #username />
+    </mat-form-field>
   </div>
 
-  <div *ngIf="pageMode!='user'">
-    <div class="user-file">
-      فایل مدارک
-    </div>
-    <div style="padding:20px">
+  <div class="info-cal">
+    <div>نام</div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput placeholder="" #username />
+    </mat-form-field>
+    <div>نام خانوادگی</div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput placeholder="" #username />
+    </mat-form-field>
+    <div>آدرس</div>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput placeholder="" #username />
+    </mat-form-field>
+  </div>
+
+  <!-- <div *ngIf="pageMode != 'user'">
+    <div class="user-file">امتیاز</div>
+    <div style="padding: 20px">
       <app-file-upload></app-file-upload>
     </div>
-  </div>
-
+  </div> -->
 </div>

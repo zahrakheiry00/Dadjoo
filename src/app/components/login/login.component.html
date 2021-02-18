@@ -1,32 +1,33 @@
+<img
+  class="login-background"
+  src="../../../assets/image/login-background.jpg"
+/>
 
+<mat-card class="login-box mat-elevation-z5">
+  <!-- <mat-card-header>
+    <mat-card-title>ورود</mat-card-title>
+  </mat-card-header> -->
 
-<img class="login-background" src="../../../assets/image/login-background.jpg">
+  <form>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="نام کاربری" #Username />
+      </mat-form-field>
 
-  <mat-card class="login-box mat-elevation-z5">
-    <mat-card-header>
-      <mat-card-title>Log in</mat-card-title>
-    </mat-card-header>
-
-    <form>
-      <mat-card-content>
-        <mat-form-field>
-          <input matInput placeholder="User name" #Username />
-        </mat-form-field>
-
-        <mat-form-field>
-          <input matInput placeholder="Password" #Password />
-        </mat-form-field>
-      </mat-card-content>
-      <button
-        mat-raised-button
-        color="accent"
-        (click)="loginClicked(Username.value, Password.value)"
-        class="login-btn"
-      >
-        Log in
-      </button>
-      <p *ngIf="invalidLogin" class="alert alert-danger" style="color: red">
-        Invalid username or password.
-      </p>
-    </form>
-  </mat-card>
+      <mat-form-field>
+        <input matInput placeholder="رمز عبور" #Password />
+      </mat-form-field>
+    </mat-card-content>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="loginClicked(Username.value, Password.value)"
+      class="login-btn"
+    >
+      ورود
+    </button>
+    <p *ngIf="invalidLogin" class="alert alert-danger" style="color: red">
+      Invalid username or password.
+    </p>
+  </form>
+</mat-card>
