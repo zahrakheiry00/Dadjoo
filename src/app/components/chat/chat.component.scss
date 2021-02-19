@@ -5,6 +5,7 @@
 .chat-menu {
   height: 100px;
   background-color: white;
+  font-family: "IRANSans2";
 }
 
 .chat-right {
@@ -27,6 +28,7 @@
   width: calc(100% - 300px);
   display: inline-block;
   height: calc(100vh - 50px);
+  background-color: white;
 }
 
 .sender {
@@ -38,6 +40,7 @@
   text-align: right;
   border-radius: 15px;
   font-size: 13px;
+  font-family: IRANSans2;
 }
 
 .receiver {
@@ -50,6 +53,7 @@
   text-align: right;
   border-radius: 15px;
   font-size: 13px;
+  font-family: IRANSans2;
 }
 
 .chat-box {
@@ -58,6 +62,7 @@
 }
 
 .chat-footer {
+  background-color: white;
   bottom: 0px;
   position: absolute;
   width: calc(100% - 300px);
@@ -75,13 +80,20 @@
 }
 
 .user-menu-img {
-  width: 80px;
+  width: 60px;
   padding-top: 20px;
   padding-left: 20px;
   display: inline-block;
   img {
     border-radius: 50%;
+    width: 67px;
+    margin-right: 100px;
   }
+}
+
+.user-name {
+  margin-left: 30px;
+  font-family: IRANSans1 !important;
 }
 
 .file-upload {
@@ -101,7 +113,11 @@
 }
 
 .start-chat-btn {
-  width: 100%;
+  width: 60%;
+  margin: 8px;
+  font-family: "IRANSans2" !important;
+  background-color: rgba(255, 0, 0, 0.616);
+  color: white;
 }
 
 .file-list {
@@ -109,13 +125,15 @@
   border-top: 1px solid lightgrey;
   margin-left: 10px;
   margin-right: 10px;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 410px);
   overflow: auto;
 }
 
 .file-item {
-  margin-top: 10px;
-  margin-right: 20px;
+  margin: 10px;
+  padding: 10px;
+  border: solid rgba(0, 0, 0, 0.226) 0.2px;
+  border-radius: 10px;
 }
 
 .user-info {
@@ -125,7 +143,10 @@
   margin-left: 11px;
 }
 
-.chat-texts{
+.chat-texts {
   overflow: auto;
   height: calc(100vh - 150px);
+  margin-left: 10px;
+  background-color: #bba5a538;
+  border-radius: 6px;
 }

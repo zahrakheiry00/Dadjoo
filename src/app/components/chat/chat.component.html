@@ -2,13 +2,15 @@
   <div>
     <div class="chat-right">
       <video id="remoteStream" autoplay playsinline></video>
-      <button class="start-chat-btn" mat-button>Lorem1</button>
+      <div style="width: 100%; text-align: center">
+        <button class="start-chat-btn" mat-button>
+          فعال سازی ارتباط تصویری
+        </button>
+      </div>
       <div class="file-list">
-        <div class="file-item">
-          لیست فایل ها
-        </div>
+        <!-- <div class="file-item">لیست فایل ها ی آپلود شده</div> -->
         <div class="file-item" *ngFor="let file of files">
-          <a>{{file.name}}</a>
+          <a>{{ file.name }}</a>
         </div>
       </div>
       <div class="file-upload">
@@ -18,27 +20,30 @@
     <div class="chat-left">
       <div class="chat-menu">
         <div class="user-menu-img">
-          <img class="mat-elevation-z5" src="../../../assets/svg/profile.svg" />
+          <img
+            class="mat-elevation-z5"
+            src="../../../assets/image/lawer4.jpg"
+          />
         </div>
         <div class="user-info">
-          <div class="user-name">Lorem, ipsum.</div>
-          <div class="user-desc">Lorem ipsum dolor sit amet.</div>
+          <div class="user-name">مهدی رضاییان</div>
+          <div class="user-name">وکیل پایه یک دادگستری</div>
         </div>
         <div class="counter">
           <div>زمان باقی مانده</div>
-          <div>{{counterLabel}}</div>
+          <div>{{ counterLabel }}</div>
         </div>
       </div>
       <div class="chat-texts">
         <div *ngFor="let text of texts">
           <div *ngIf="text.sender" class="chat-box">
             <div class="sender mat-elevation-z4">
-              {{text.text}}
+              {{ text.text }}
             </div>
           </div>
           <div *ngIf="!text.sender" class="chat-box">
             <div class="receiver mat-elevation-z4">
-              {{text.text}}
+              {{ text.text }}
             </div>
           </div>
         </div>
@@ -47,12 +52,11 @@
 
     <div class="chat-footer">
       <button (click)="sendMessage()" mat-icon-button>
-        <mat-icon>sender</mat-icon>
+        <mat-icon style="color: darkred">sender</mat-icon>
       </button>
-      <mat-form-field>
-        <input [(ngModel)]="message" matInput placeholder="ارسال">
+      <mat-form-field style="font-family: IRANSans1 !important">
+        <input [(ngModel)]="message" matInput placeholder="ارسال متن" />
       </mat-form-field>
     </div>
   </div>
-
 </div>
