@@ -33,30 +33,54 @@
 
 <div class="bottom-menu">
   <div class="menu-links">
-    <button mat-button style="font-family: IRANSans3 !important">
+    <button
+      [routerLink]="['/home']"
+      mat-button
+      style="font-family: IRANSans3 !important"
+    >
       صفحه اصلی
     </button>
-    <button mat-button style="font-family: IRANSans3 !important">
+    <button
+      [routerLink]="['/about']"
+      mat-button
+      style="font-family: IRANSans3 !important"
+    >
       درباره ما
     </button>
-    <button mat-button style="font-family: IRANSans3 !important">
+    <button
+      [routerLink]="['/contact-us']"
+      mat-button
+      style="font-family: IRANSans3 !important"
+    >
       تماس با ما
     </button>
   </div>
 
   <div class="menu-links" style="margin-right: 69%">
-
-    <button style="font-family: IRANSans3 !important" mat-button [matMenuTriggerFor]="menuLogin">ثبت نام</button>
+    <button
+      style="font-family: IRANSans3 !important"
+      mat-button
+      [matMenuTriggerFor]="menuLogin"
+    >
+      ثبت نام
+    </button>
     <mat-menu #menuLogin="matMenu">
       <button [routerLink]="['/register']" mat-menu-item>ثبت نام مشاور</button>
-      <button [routerLink]="['/register-user']" mat-menu-item>ثبت نام کاربر</button>
+      <button [routerLink]="['/register-user']" mat-menu-item>
+        ثبت نام کاربر
+      </button>
     </mat-menu>
 
-    <button style="font-family: IRANSans3 !important" mat-button [matMenuTriggerFor]="menu">ورود</button>
+    <button
+      style="font-family: IRANSans3 !important"
+      mat-button
+      [matMenuTriggerFor]="menu"
+    >
+      ورود
+    </button>
     <mat-menu #menu="matMenu">
       <button [routerLink]="['/login/client']" mat-menu-item>ورود مشاور</button>
       <button [routerLink]="['/login/expert']" mat-menu-item>ورود کاربر</button>
     </mat-menu>
-
   </div>
 </div>

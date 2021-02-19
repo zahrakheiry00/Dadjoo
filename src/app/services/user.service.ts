@@ -14,7 +14,12 @@ export class UserService {
     return this.http.post(Url, inputs, { headers: hdrs });
   }
   register(inputs: any) {
-    const Url = this.baseurl + 'api/register';
+    const Url = this.baseurl + 'api/dadjoo_reg_client';
+    const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(Url, inputs, { headers: hdrs });
+  }
+  expert_register(inputs: any) {
+    const Url = this.baseurl + 'api/dadjoo_reg_client1';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }

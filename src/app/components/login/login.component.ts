@@ -26,11 +26,10 @@ export class LoginComponent implements OnInit {
     private userService: UserService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
-    if (this.router.url.includes('client'))
-      this.pageMode = 'client';
+    if (this.router.url.includes('client')) this.pageMode = 'client';
     else {
       this.pageMode = 'expert';
     }

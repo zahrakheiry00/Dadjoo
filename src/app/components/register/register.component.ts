@@ -13,17 +13,29 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  registerClicked(username: any, email: any, phoneNumber: any, password: any) {
+  registerClicked(
+    speciality?: any,
+    username?: any,
+    email?: any,
+    phoneNumber?: any,
+    password?: any,
+    madarek?: any
+  ) {
     var inputs = {
+      speciality: speciality,
       username: username,
       email: email,
       phoneNumber: phoneNumber,
       password: password,
+      madarek: madarek,
     };
-    if (this.userService.register(inputs)) {
-      //navigate to next page
-    } else {
-      this.invalidLogin = true;
-    }
+    this.userService.expert_register(inputs).subscribe((res) => {
+      // localStorage.setItem('token', res.token);
+      // if (res.status == 0) {
+      //   this.router.navigateByUrl('users-profile');
+      // } else {
+      //   this.invalidLogin = true;
+      // }
+    });
   }
 }
