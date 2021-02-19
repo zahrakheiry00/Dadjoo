@@ -20,14 +20,21 @@ export class LoginComponent implements OnInit {
   // username:any;
   // password:any;
   invalidLogin = false;
+  pageMode = 'client';
 
   constructor(
     private userService: UserService,
     private snackBar: MatSnackBar,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.router.url.includes('client'))
+      this.pageMode = 'client';
+    else {
+      this.pageMode = 'expert';
+    }
+  }
 
   loginClicked(username: any, password: any) {
     var inputs = {
