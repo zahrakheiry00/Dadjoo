@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { Router } from '@angular/router';
->>>>>>> change.
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
