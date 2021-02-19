@@ -31,19 +31,16 @@ export class LoginComponent implements OnInit {
 
   loginClicked(username: any, password: any) {
     var inputs = {
-      "password": password,
-      "username": username
-    }
-    this.userService.login(inputs).subscribe(res => {
-      localStorage.setItem("token",res.token)
-      localStorage.getItem("token")
+      tpass: password,
+      tusername: username,
+    };
+    this.userService.login(inputs).subscribe((res) => {
+      localStorage.setItem('token', res.token);
       if (res.status == 0) {
         this.router.navigateByUrl('users-profile');
-      }
-      else {
+      } else {
         this.invalidLogin = true;
       }
-    })
+    });
   }
-
 }

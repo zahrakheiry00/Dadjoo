@@ -9,7 +9,7 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) {}
 
   login(inputs: any): Observable<any> {
-    const Url = this.baseurl + 'api/login';
+    const Url = this.baseurl + 'api/dadjoo_login';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }

@@ -9,20 +9,17 @@ import { AuthGuard } from './shared/auth.guard';
 import { RegisterUserComponent } from './components/register-user/register-user.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-
+import { MenuModule } from './components/menu/menu.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutComponent,
-    ContactUsComponent,
-  ],
+  declarations: [AppComponent, AboutComponent, ContactUsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
+    MenuModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
