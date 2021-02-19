@@ -17,8 +17,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  // username:any;
-  // password:any;
   invalidLogin = false;
   pageMode = 'client';
 
@@ -41,9 +39,14 @@ export class LoginComponent implements OnInit {
       tusername: username,
     };
     this.userService.login(inputs).subscribe((res) => {
-      localStorage.setItem('token', res.token);
-      if (res.status == 0) {
-        this.router.navigateByUrl('users-profile');
+      if (res.status == "200") {
+        localStorage.setItem('token', res.data.token);
+        if(this.pageMode=='client'){
+          this.router.navigateByUrl('users-profile');
+        }
+        else{
+          this.router.navigateByUrl('experts-profile');
+        }
       } else {
         this.invalidLogin = true;
       }
