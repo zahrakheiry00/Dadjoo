@@ -25,4 +25,10 @@ export class UserService {
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }
+
+  search(inputs: any): Observable<any>  {
+    const Url = this.baseurl + 'api/dadjoo_search_expert';
+    const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(Url, inputs, { headers: hdrs });
+  }
 }

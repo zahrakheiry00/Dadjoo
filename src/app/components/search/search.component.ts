@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-search',
@@ -7,6 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
+  searchText: any;
+  specialtyid: any;
   users = [
     {
       name: 'محمد مهدی رضاییان',
@@ -58,7 +61,23 @@ export class SearchComponent implements OnInit {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if (params.name == 'ملکی')
+        this.specialtyid = 1;
+    });
+  }
+
+  search() {
+    var inputs = {
+      expertname: this.searchText,
+      specialtyid: this.specialtyid
+    };
+    this.userService.search({ intext: JSON.stringify(inputs) }).subscribe(res => {
+
+    })
+  }
+
 }
