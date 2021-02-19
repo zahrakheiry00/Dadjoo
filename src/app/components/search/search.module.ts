@@ -8,6 +8,7 @@ import { SearchComponent } from './search.component';
 import { SearchRoutingModule } from './search.routing';
 import { MenuModule } from "../menu/menu.module";
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { UserService } from "src/app/services/user.service";
 
 
 @NgModule({
@@ -28,6 +29,6 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
   ],
   exports: [SearchComponent],
-  providers: [],
+  providers: [UserService],
 })
 export class SearchModule {}

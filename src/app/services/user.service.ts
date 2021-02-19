@@ -13,8 +13,21 @@ export class UserService {
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }
-  register(inputs: any) {
-    const Url = this.baseurl + 'api/register';
+
+  registerClient(inputs: any): Observable<any>  {
+    const Url = this.baseurl + 'api/dadjoo_reg_client';
+    const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(Url, inputs, { headers: hdrs });
+  }
+
+  registerExpert(inputs: any): Observable<any>  {
+    const Url = this.baseurl + 'api/dadjoo_reg_expert';
+    const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(Url, inputs, { headers: hdrs });
+  }
+
+  search(inputs: any): Observable<any>  {
+    const Url = this.baseurl + 'api/dadjoo_search_expert';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }

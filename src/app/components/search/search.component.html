@@ -2,9 +2,9 @@
 
 <div class="search-box">
   <mat-form-field class="search-input" appearance="outline">
-    <input matInput placeholder="جستجوی با نام مشاور" />
+    <input [(ngModel)]="searchText" matInput placeholder="جستجوی با نام مشاور" />
   </mat-form-field>
-  <button mat-raised-button class="search-btn">جستجو</button>
+  <button (click)="search()" mat-raised-button class="search-btn">جستجو</button>
 </div>
 
 <div class="row">
@@ -37,7 +37,12 @@
               <div>4.2</div>
             </div>
           </div>
-          <button mat-stroked-button color="primary" class="reserve">
+          <button
+            [routerLink]="['/reserve']"
+            mat-stroked-button
+            color="primary"
+            class="reserve"
+          >
             شروع گفتگو
           </button>
         </div>

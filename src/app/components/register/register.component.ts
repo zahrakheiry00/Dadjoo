@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -9,21 +10,32 @@ import { UserService } from 'src/app/services/user.service';
 export class RegisterComponent implements OnInit {
   invalidLogin = false;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  registerClicked(username: any, email: any, phoneNumber: any, password: any) {
+  registerClicked(
+    speciality?: any,
+    username?: any,
+    email?: any,
+    phoneNumber?: any,
+    password?: any,
+    madarek?: any
+  ) {
     var inputs = {
+      speciality: speciality,
       username: username,
       email: email,
-      phoneNumber: phoneNumber,
+      phone: phoneNumber,
       password: password,
+      madarek: madarek,
     };
-    if (this.userService.register(inputs)) {
-      //navigate to next page
-    } else {
-      this.invalidLogin = true;
-    }
+    this.userService.registerClient(inputs).subscribe((res) => {
+      if (res.status == "200") {
+        this.router.navigateByUrl('/users-profile');
+      } else {
+        this.invalidLogin = true;
+      }
+    });
   }
 }

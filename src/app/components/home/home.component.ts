@@ -70,6 +70,10 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  categorySelect(category:any){
+    this.router.navigate(['../search'], { queryParams:{ name: category }});
+  }
+
   categoryList = [
     { name: 'ملکی', image: '../../../assets/image/estate.jpg' },
     { name: 'خانواده', image: '../../../assets/image/family.jpg' },
