@@ -31,4 +31,11 @@ export class UserService {
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }
+
+  getUserInfo(inputs: any): Observable<any>  {
+    const Url = this.baseurl + 'api/dadjoo_get_client_info';
+    const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(Url, inputs, { headers: hdrs });
+  }
+
 }

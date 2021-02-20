@@ -64,7 +64,7 @@
       <ng-template matStepLabel>&nbsp;پرداخت</ng-template>
       <div>
         <button class="back-btn" mat-button matStepperPrevious>بازگشت</button>
-        <button class="next-btn" mat-button matStepperNext>تایید نهایی</button>
+        <button (click)="accept()" class="next-btn" mat-button matStepperNext>تایید نهایی</button>
       </div>
     </mat-step>
   </mat-horizontal-stepper>
