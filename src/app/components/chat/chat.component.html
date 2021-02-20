@@ -26,12 +26,22 @@
           />
         </div>
         <div class="user-info">
-          <div class="user-name">{{name}}</div>
-          <div class="user-name">{{desc}}</div>
+          <div class="user-name">{{ name }}</div>
+          <div class="user-name">{{ desc }}</div>
         </div>
-        <div class="counter">
+        <div class="counter" style="display: inline">
           <div>زمان باقی مانده</div>
           <div>{{ counterLabel }}</div>
+        </div>
+        <div style="text-align: right; display: inline; margin-left: 800px">
+          <button
+            class="start-chat-btn"
+            mat-button
+            style="width: 10px !important"
+            [routerLink]="['/home']"
+          >
+            خروج
+          </button>
         </div>
       </div>
       <div class="chat-texts">
