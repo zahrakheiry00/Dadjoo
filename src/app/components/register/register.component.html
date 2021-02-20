@@ -49,8 +49,9 @@
             )
           "
           class="login-btn"
+          matStepperNext
         >
-          تایید
+          بعدی
         </button>
       </div>
     </mat-step>
@@ -94,12 +95,27 @@
             )
           "
           class="login-btn"
+          matStepperNext
         >
-          تایید
+          بعدی
         </button>
-        <p *ngIf="invalidLogin" class="alert alert-danger" style="color: red">
-          Invalid username or password.
-        </p>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="
+            registerClicked(
+              username.value,
+              email.value,
+              phoneNumber.value,
+              password.value
+            )
+          "
+          class="login-btn"
+          matStepperPrevious
+          style="margin-left: 870px"
+        >
+          بازگشت
+        </button>
       </div>
     </mat-step>
 
@@ -121,6 +137,23 @@
           class="login-btn"
         >
           تایید نهایی
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="
+            registerClicked(
+              username.value,
+              email.value,
+              phoneNumber.value,
+              password.value
+            )
+          "
+          class="login-btn"
+          matStepperPrevious
+          style="margin-left: 840px"
+        >
+          بازگشت
         </button>
       </div>
     </mat-step>
