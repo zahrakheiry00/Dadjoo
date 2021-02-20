@@ -4,9 +4,19 @@
   <div class="right-panel mat-elevation-z4">
     <div>
       <div class="user-img">
-        <img class="mat-elevation-z5" src="../../../assets/image/lawer3.jpg" />
-        <div class="user-name">مهدی رضاییان</div>
+        <img
+          *ngIf="pageMode != 'user'"
+          class="mat-elevation-z5"
+          src="../../../assets/image/lawer3.jpg"
+        />
+        <img
+          *ngIf="pageMode == 'user'"
+          class="mat-elevation-z5"
+          src="../../../assets/image/lawer5.jpg"
+        />
       </div>
+      <div class="user-name" *ngIf="pageMode != 'user'">مهدی رضاییان</div>
+      <div class="user-name" *ngIf="pageMode == 'user'">زهرا خیری</div>
       <div *ngIf="pageMode != 'user'" style="text-align: center">
         <div class="user-name" style="display: inline-block">4.4</div>
         <div style="display: inline-block">

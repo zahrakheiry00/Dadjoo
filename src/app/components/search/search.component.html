@@ -16,10 +16,11 @@
         </div>
         <div class="consultant-detail">
           <b>
-            {{ consultant.name }}
+            {{ consultant.uname }}
           </b>
           <div style="color: gray; font-family: IRANSans2 !important">
-            {{ consultant.desc }}
+            <!-- {{ consultant.desc }} -->
+            وکیل پایه یک دادگستری
           </div>
           <div>
             <div class="statistics">
@@ -34,7 +35,7 @@
                 <mat-icon class="mat-icon-star">star_rate</mat-icon>
               </div>
               <div>رضایت مشتریان</div>
-              <div>4.2</div>
+              <div>{{consultant.score}}</div>
             </div>
           </div>
           <button

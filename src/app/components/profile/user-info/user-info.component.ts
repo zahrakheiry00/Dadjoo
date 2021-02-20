@@ -50,6 +50,23 @@ export class UserInfoComponent implements OnInit {
       this.address = this.eaddress;
       this.desc = this.edesc;
     }
+
+    //  var inputs = {
+    //    tpass: password,
+    //    tusername: username,
+    //  };
+    //  this.userService.login(inputs).subscribe((res) => {
+    //    if (res.status == '200') {
+    //      localStorage.setItem('token', res.data.token);
+    //      if (this.pageMode == 'client') {
+    //        this.router.navigateByUrl('users-profile');
+    //      } else {
+    //        this.router.navigateByUrl('experts-profile');
+    //      }
+    //    } else {
+    //      this.invalidLogin = true;
+    //    }
+    //  });
   }
 
   // getUserInfo() {
