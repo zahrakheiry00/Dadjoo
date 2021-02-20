@@ -12,7 +12,8 @@
     <div class="consultant-box">
       <div class="mat-elevation-z4">
         <div class="consultant-img">
-          <img class="mat-elevation-z5" [src]="consultant.img" />
+          <img class="mat-elevation-z5" [src]="image" />
+          <!-- <img class="mat-elevation-z5" [src]="consultant.img" /> -->
         </div>
         <div class="consultant-detail">
           <b>
@@ -37,12 +38,7 @@
               <div>4.2</div>
             </div>
           </div>
-          <button
-            (click)="startReserve()"
-            mat-stroked-button
-            color="primary"
-            class="reserve"
-          >
+          <button (click)="startReserve()" mat-stroked-button color="primary" class="reserve">
             شروع گفتگو
           </button>
         </div>

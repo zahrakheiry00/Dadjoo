@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -10,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class SearchComponent implements OnInit {
   searchText: any;
   specialtyid: any;
+  image:any;
   users = [
     {
       name: 'محمد رضایی',
@@ -61,7 +63,7 @@ export class SearchComponent implements OnInit {
     },
   ];
 
-  constructor(private userService: UserService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private sanitizer: DomSanitizer,private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -86,7 +88,7 @@ export class SearchComponent implements OnInit {
       specialtyid: this.specialtyid
     };
     this.userService.search({ intext: JSON.stringify(inputs) }).subscribe(res => {
-
+      this.image = this.sanitizer.bypassSecurityTrustResourceUrl('data:image/png;base64,'+res.data[0].img);
     })
   }
 
