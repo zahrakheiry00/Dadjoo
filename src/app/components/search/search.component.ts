@@ -11,59 +11,59 @@ import { UserService } from 'src/app/services/user.service';
 export class SearchComponent implements OnInit {
   searchText: any;
   specialtyid: any;
-  image:any;
-  users = [
-    {
-      name: 'محمد رضایی',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer2.jpg',
-    },
-    {
-      name: 'مریم طالبی',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer3.jpg',
-    },
-    {
-      name: 'محسن خیری',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer4.jpg',
-    },
-    {
-      name: 'زهرا احمدی',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer9.jpg',
-    },
-    {
-      name: 'رضا احمدی',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer5.jpg',
-    },
-    {
-      name: 'شایان کیان',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer6.jpg',
-    },
-    {
-      name: 'زاهد خانتیموری',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer7.jpg',
-    },
-    {
-      name: 'محمد مهدی رضاییان',
-      desc: 'وکیل پایه یک دادگستری',
-      score: 4,
-      img: '../../../assets/image/lawer8.jpg',
-    },
+  image: any;
+  users:any = [
+    // {
+    //   name: 'محمد رضایی',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer2.jpg',
+    // },
+    // {
+    //   name: 'مریم طالبی',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer3.jpg',
+    // },
+    // {
+    //   name: 'محسن خیری',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer4.jpg',
+    // },
+    // {
+    //   name: 'زهرا احمدی',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer9.jpg',
+    // },
+    // {
+    //   name: 'رضا احمدی',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer5.jpg',
+    // },
+    // {
+    //   name: 'شایان کیان',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer6.jpg',
+    // },
+    // {
+    //   name: 'زاهد خانتیموری',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer7.jpg',
+    // },
+    // {
+    //   name: 'محمد مهدی رضاییان',
+    //   desc: 'وکیل پایه یک دادگستری',
+    //   score: 4,
+    //   img: '../../../assets/image/lawer8.jpg',
+    // },
   ];
 
-  constructor(private sanitizer: DomSanitizer,private userService: UserService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private sanitizer: DomSanitizer, private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -88,7 +88,13 @@ export class SearchComponent implements OnInit {
       specialtyid: this.specialtyid
     };
     this.userService.search({ intext: JSON.stringify(inputs) }).subscribe(res => {
-      this.image = this.sanitizer.bypassSecurityTrustResourceUrl('data:image/png;base64,'+res.data[0].img);
+      this.users = [];
+      if (res.data) {
+        res.data.forEach((element: any) => {
+          element.img = this.sanitizer.bypassSecurityTrustResourceUrl('data:image/png;base64,' + element.img);
+        });
+        this.users = res.data;
+      }
     })
   }
 
