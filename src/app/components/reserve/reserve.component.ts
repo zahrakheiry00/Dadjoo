@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ReserveComponent implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
 
@@ -23,5 +23,8 @@ export class ReserveComponent implements OnInit {
     {date: '1400/02/02', time: '9:00', },
   ];
 
+  accept(){
+    this.router.navigate(['../home']);
+  }
 
 }

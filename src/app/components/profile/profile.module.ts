@@ -13,6 +13,7 @@ import { FreeTimeComponent } from "./free-time/free-time.component";
 import { TicketComponent } from "./ticket/ticket.component";
 import { HistoryComponent } from "./history/history.component";
 import { FileUploadModule } from "../file-upload/file-upload.module";
+import { UserService } from "src/app/services/user.service";
 
 
 @NgModule({
@@ -38,6 +39,6 @@ import { FileUploadModule } from "../file-upload/file-upload.module";
 
   ],
   exports: [ProfileComponent],
-  providers: [],
+  providers: [UserService],
 })
 export class ProfileModule {}

@@ -7,9 +7,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./ticket.component.scss'],
 })
 export class TicketComponent implements OnInit {
-  constructor(private router: Router) {}
+  pageMode = "user";
 
-  ngOnInit() {}
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    if (this.router.url.includes('user')) {
+      this.pageMode = "user";
+    }
+    if (this.router.url.includes('expert')) {
+      this.pageMode = "expert";
+    }
+  }
+
+  startChat() {
+    if (this.pageMode == "user")
+      this.router.navigate(['../chat'], { queryParams: { name: 'محمد رضایی',desc:'وکیل پایه یک دادگستری' } });
+    else {
+      this.router.navigate(['../chat'], { queryParams: { name: 'زهرا خیری',desc:'' } });
+    }
+  }
 
   displayedColumns: string[] = ['enter', 'lawername', 'date', 'time', 'select'];
   dataSource = [

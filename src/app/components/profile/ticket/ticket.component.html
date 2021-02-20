@@ -14,14 +14,16 @@
     <td mat-cell *matCellDef="let element">{{ element.time }}</td>
   </ng-container>
   <ng-container matColumnDef="lawername">
-    <th mat-header-cell *matHeaderCellDef>نام مشاور</th>
+    <th mat-header-cell *matHeaderCellDef><span *ngIf="pageMode!='user'">نام مشاور</span>
+      <span *ngIf="pageMode=='user'">نام کاربر</span>
+    </th>
     <td mat-cell *matCellDef="let element">{{ element.lawername }}</td>
   </ng-container>
 
   <ng-container matColumnDef="enter">
     <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let element">
-      <button mat-button style="color: green">enter</button>
+    <td mat-cell *matCellDef="let element;let i =index;">
+      <button (click)="startChat()" *ngIf="i==0" mat-button style="color: green">ورود</button>
     </td>
   </ng-container>
 

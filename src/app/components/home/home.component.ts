@@ -16,43 +16,43 @@ export class HomeComponent implements OnInit {
       img: '../../../assets/image/lawer2.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'محمد رضایی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer3.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'رضا احمدی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer4.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'زاهد خانتیموری',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer9.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'رضا احمدی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer5.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'جواد رضایی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer6.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'احمد احمدی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer7.jpg',
     },
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'مریم طالبی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer8.jpg',
@@ -63,10 +63,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  startReserve(category: any) {
+  startReserve() {
     if (localStorage.getItem('token')) {
+      this.router.navigate(['../reserve']);
     } else {
-      this.router.navigate(['../login']);
+      this.router.navigate(['../login/client']);
     }
   }
 

@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
 
@@ -8,6 +8,8 @@ import { Socket } from 'ngx-socket-io';
   styleUrls: ['./chat.component.scss'],
 })
 export class ChatComponent implements OnInit {
+  name:any;
+  desc:any;
   texts: any = [];
   counterLabel = '30:00';
   counterTime = 1800;
@@ -47,9 +49,14 @@ export class ChatComponent implements OnInit {
   // socket:any;
   @ViewChild('remoteStream') remoteStream: any;
 
-  constructor(private socket: Socket) {}
+  constructor(private socket: Socket,private router: Router,private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+       this.name=params['name'];
+       this.desc=params['desc'];
+    })
+
     this.startCounter();
 
     //this.socket = io(this.SIGNALING_SERVER_URL, { autoConnect: false });
