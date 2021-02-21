@@ -1,6 +1,8 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import { UserService } from 'src/app/services/user.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-chat',
@@ -8,18 +10,12 @@ import { Socket } from 'ngx-socket-io';
   styleUrls: ['./chat.component.scss'],
 })
 export class ChatComponent implements OnInit {
-  name:any;
-  desc:any;
+  name: any;
+  desc: any;
   texts: any = [];
   counterLabel = '30:00';
   counterTime = 1800;
-  files = [
-    { name: 'فایل 1' },
-    { name: 'فایل 2' },
-    { name: 'فایل 3' },
-    { name: 'فایل 4' },
-    { name: 'فایل 5' },
-  ];
+  files: any = [];
   message: any;
 
   SIGNALING_SERVER_URL = 'http://0.0.0.0:9999';
@@ -49,12 +45,22 @@ export class ChatComponent implements OnInit {
   // socket:any;
   @ViewChild('remoteStream') remoteStream: any;
 
-  constructor(private socket: Socket,private router: Router,private route: ActivatedRoute) {}
+  constructor(private socket: Socket, private router: Router, private route: ActivatedRoute, private userService: UserService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-       this.name=params['name'];
-       this.desc=params['desc'];
+      this.name = params['name'];
+      this.desc = params['desc'];
+    })
+
+    this.userService.fileTrigger.subscribe(res => {
+      this.files=[]
+      this.userService.fileList.forEach((element: any) => {
+        this.userService.getFile({ intext: JSON.stringify({ file_upload_id: element.id }) }).subscribe(file => {
+          this.files.push({ file: this.sanitizer.bypassSecurityTrustResourceUrl(file.data[0].file_upload), name: file.data[0].file_upload_name });
+          this.socket.emit('data', {file:this.files,list:this.userService.fileList});
+        })
+      })
     })
 
     this.startCounter();
@@ -66,6 +72,10 @@ export class ChatComponent implements OnInit {
     this.socket.on('data', (data: any) => {
       if (data.video) {
         this.texts.push({ sender: false, text: data.text });
+      }
+      if (data.file) {
+        this.files=data.file;
+        this.userService.fileList=data.list;
       } else {
         this.handleSignalingData(data);
       }

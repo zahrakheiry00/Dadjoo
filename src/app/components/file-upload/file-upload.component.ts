@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FileSystemDirectoryEntry, FileSystemFileEntry, NgxFileDropEntry } from 'ngx-file-drop';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -13,8 +14,9 @@ import { FileSystemDirectoryEntry, FileSystemFileEntry, NgxFileDropEntry } from 
 export class FileUploadComponent implements OnInit {
   file: any;
   public files: NgxFileDropEntry[] = [];
+  name: any;
 
-  constructor(private sanitizer: DomSanitizer, private snackBar: MatSnackBar, private http: HttpClient) { }
+  constructor(private sanitizer: DomSanitizer, private snackBar: MatSnackBar, private http: HttpClient, private userService: UserService) { }
 
   ngOnInit() {
 
@@ -29,6 +31,7 @@ export class FileUploadComponent implements OnInit {
         const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
         fileEntry.file((file: File) => {
           if (file.size < 3000000) {
+            this.name = file.name;
             this.convertFile(file).then((base64: any) => {
               this.addFile(base64);
               this.file = this.sanitizer.bypassSecurityTrustResourceUrl(base64);
@@ -62,16 +65,17 @@ export class FileUploadComponent implements OnInit {
     });
   }
 
+
   addFile(file: any) {
-    const Url = 'http://127.0.0.1:5000/api/';
+    const Url = 'http://127.0.0.1:5000/api/dadjoo_insert_file';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     var inputJson = {
-      desc: 'test',
-      form_id: 1,
-      file: file,
+      filename: this.name,
+      fileupload: file,
     }
-    this.http.post(Url, inputJson, { headers: hdrs }).subscribe(res => {
-      // console.log(res);
+    this.http.post(Url, { intext: JSON.stringify(inputJson) }, { headers: hdrs }).subscribe((res: any) => {
+      this.userService.fileList.push({id:res.data,name:this.name});
+      this.userService.fileTrigger$.next([]);
     });
   }
 
