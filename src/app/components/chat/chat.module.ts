@@ -9,6 +9,7 @@ import { MenuModule } from '../menu/menu.module';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { SocketIoModule } from 'ngx-socket-io';
 import { FileUploadModule } from '../file-upload/file-upload.module';
+import { UserService } from 'src/app/services/user.service';
 
 @NgModule({
   declarations: [ChatComponent],
@@ -27,6 +28,6 @@ import { FileUploadModule } from '../file-upload/file-upload.module';
   ],
   entryComponents: [],
   exports: [ChatComponent],
-  providers: [],
+  providers: [UserService],
 })
 export class ChatModule {}

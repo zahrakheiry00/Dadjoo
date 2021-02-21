@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FileUploadComponent } from './file-upload.component';
 import { MatIconModule } from "@angular/material/icon";
 import { NgxFileDropModule } from "ngx-file-drop";
+import { UserService } from "src/app/services/user.service";
 
 
 @NgModule({
@@ -26,6 +27,6 @@ import { NgxFileDropModule } from "ngx-file-drop";
 
   ],
   exports: [FileUploadComponent],
-  providers: [],
+  providers: [UserService],
 })
 export class FileUploadModule {}

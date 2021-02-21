@@ -1,12 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class UserService {
+  public fileList:any=[];
+  public fileTrigger$: BehaviorSubject<any[]>;
   baseurl = 'http://127.0.0.1:5000/';
-  constructor(private http: HttpClient, private router: Router) {}
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.fileTrigger$ = new BehaviorSubject<any[]>([]);
+  }
+
+  public get fileTrigger(): Observable<any[]> {
+    return this.fileTrigger$.asObservable();
+  }
 
   login(inputs: any): Observable<any> {
     const Url = this.baseurl + 'api/dadjoo_login';
@@ -34,6 +43,12 @@ export class UserService {
 
   getUserInfo(inputs: any): Observable<any>  {
     const Url = this.baseurl + 'api/dadjoo_get_client_info';
+    const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(Url, inputs, { headers: hdrs });
+  }
+
+  getFile(inputs: any): Observable<any>  {
+    const Url = this.baseurl + 'api/dadjoo_get_file';
     const hdrs = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(Url, inputs, { headers: hdrs });
   }
