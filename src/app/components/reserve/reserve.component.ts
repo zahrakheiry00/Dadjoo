@@ -24,7 +24,7 @@ export class ReserveComponent implements OnInit {
   ];
 
   accept(){
-    this.router.navigate(['../home']);
+    this.router.navigate(['../users-profile']);
   }
 
 }

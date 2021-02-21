@@ -10,13 +10,13 @@ export class HomeComponent implements OnInit {
   itemsPerSlideTopUser = 4;
   topUserSlides = [
     {
-      name: 'محمد مهدی رضاییان',
+      name: 'لیلا جعفری',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer2.jpg',
     },
     {
-      name: 'محمد رضایی',
+      name: 'مهدی رضاییان',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer3.jpg',
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       img: '../../../assets/image/lawer9.jpg',
     },
     {
-      name: 'رضا احمدی',
+      name: 'زهرا احمدی',
       desc: 'وکیل پایه یک دادگستری',
       score: 4,
       img: '../../../assets/image/lawer5.jpg',
